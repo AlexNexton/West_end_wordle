@@ -8,6 +8,7 @@ body {
     background-color: #121213;
 }
 
+
 /*tile container */
 
 .title-container {
@@ -16,8 +17,10 @@ body {
     border-bottom: solid 1PX #3A3A3C;
 }
 
+/*add this to make the tiles go next to eachother*/
 .tile-container div {
     display: flex;
+    
 }
 
 .tile-container .tile {
@@ -37,6 +40,10 @@ body {
     flex-direction: column ;
     justify-content: space-between;
     align-items: center;
+}
+
+.message-container {
+    height: 30px;
 }
 
 .tile-container {

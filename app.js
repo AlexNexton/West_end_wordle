@@ -2,6 +2,7 @@ const tileDisplay = document.querySelector('.tile-container');
 
 const keyboard = document.querySelector('.key-container');
 
+const wordle = 'super';
 
 const keys = [
     'Q',
@@ -44,6 +45,10 @@ const guessRows = [
     ['', '', '', '', ''],
     ['', '', '', '', '']
 ]
+//initialise tiles and rows
+
+let currentRow = 0;
+let currentTile = 0;
 
 guessRows.forEach((guessRow, guessRowIndex) => {
     const rowElement = document.createElement('div');
@@ -58,16 +63,24 @@ guessRows.forEach((guessRow, guessRowIndex) => {
     tileDisplay.append(rowElement);
 });
 
-const handleClick = () => {
-    console.log('clicked')
-}
 
 // add keys to the a button in the key-container
 keys.forEach(key =>{
    const buttonElement = document.createElement('button');
    buttonElement.textContent = key;
    buttonElement.setAttribute('id', key);
-   buttonElement.addEventListener('click', handleClick);
+   buttonElement.addEventListener('click', () => handleClick(key));
    keyboard.append(buttonElement);
-});
+})
+
+const handleClick = (letter) => {
+    console.log('clicked', letter);
+    addLetter(letter);
+}
+
+const addLetter = (letter) => {
+    const tile = document.getElementById('guessRow-'+ currentRow+'-tile-'+ currentTile);
+    tile.textContent = letter;
+    currentTile++;
+}
 
