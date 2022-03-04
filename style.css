@@ -28,9 +28,37 @@ body {
 }
 
 .key-container {
-    width: 510;
+    width: 510px;
     display: flex;
     flex-wrap: wrap;
 
 }
+
+/*Keys for wordle and their colour*/
+
+.key-container button {
+    width: 43px;
+    height: 58px;
+    border-radius: 4px;
+    border: none;
+    background-color: #818384;
+    color: antiquewhite;
+    margin: 4px;
+    
+}
+/*The style for the enter and backspace btn*/
+.key-container button:nth-child(20),
+.key-container button:nth-child(28) {
+    width: 70px;
+}
+
+.key-container button:nth-child(11) {
+    margin-left: 30px;
+}
+
+.key-container button:hover {
+    background-color: aqua;
+}
+
+
 

@@ -1,10 +1,11 @@
 const tileDisplay = document.querySelector('.tile-container');
+
 const keyboard = document.querySelector('.key-container');
 
 
 const keys = [
     'Q',
-    'W',
+    'W', 
     'E',
     'R',
     'T',
@@ -33,8 +34,16 @@ const keys = [
     '«',
 ]
 
+const handleClick = () => {
+    console.log('clicked')
+}
+
+// add keys to the a button in the key-container
 keys.forEach(key =>{
-   const buttonElement = document.createElement('button')
-   buttonElement.textContent = key
-   keyboard.append(button)
-})
+   const buttonElement = document.createElement('button');
+   buttonElement.textContent = key;
+   buttonElement.setAttribute('id', key);
+   buttonElement.addEventListener('click', handleClick);
+   keyboard.append(buttonElement);
+});
+
